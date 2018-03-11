@@ -1,3 +1,4 @@
+import Lesson_2.Product;
 import Lesson_2.Square;
 import Lesson_2.User;
 
@@ -10,16 +11,21 @@ public class ObjectList {
 
     public Object[] getObjects() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Class <User> userClass = User.class;
-        Constructor constructor = userClass.getDeclaredConstructor();
-        constructor.setAccessible(true);
-        User user = (User) constructor.newInstance();
+        Constructor constructor1 = userClass.getDeclaredConstructor();
+        constructor1.setAccessible(true);
+        User user = (User) constructor1.newInstance();
 
         Class <Square> squareClass = Square.class;
-        Constructor constructor1 = squareClass.getDeclaredConstructor();
-        constructor1.setAccessible(true);
-        Square square = (Square) constructor1.newInstance();
+        Constructor constructor2 = squareClass.getDeclaredConstructor();
+        constructor2.setAccessible(true);
+        Square square = (Square) constructor2.newInstance();
 
-        Object[] objects = new Object[]{user, square};
+        Class <Product> productClass = Product.class;
+        Constructor constructor3 = productClass.getDeclaredConstructor();
+        constructor3.setAccessible(true);
+        Product product = (Product) constructor3.newInstance();
+
+        Object[] objects = new Object[]{user, square, product};
 
         for (Object o: objects) {
             RandomIntProsessor.prosessor(o);

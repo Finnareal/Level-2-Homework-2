@@ -10,7 +10,7 @@ public class Testing {
         Method method = objectListClass.getDeclaredMethod("getObjects");
         Object[] objects = (Object[]) method.invoke(objectList);
 
-        System.out.println(objects[0].toString() + "\n" + objects[1].toString());
+        System.out.println(objects[0].toString() + "\n" + objects[1].toString() + "\n" + objects[2].toString());
 
     }
 }
